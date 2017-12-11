@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:skin="http://schemas.android.com/android/skin"
+    android:id="@+id/ll_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    skin:skin_switch="true"
+    android:background="@color/custom_red"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/bt_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        skin:skin_switch="true"
+        android:text="切换皮肤"
+        android:textColor="@color/colorAccent"
+        android:background="@color/colorPrimary"/>
+
+    <Button
+        android:id="@+id/bt_jump"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        skin:skin_switch="true"
+        android:text="跳转"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/custom_green"/>
+
+</LinearLayout>
