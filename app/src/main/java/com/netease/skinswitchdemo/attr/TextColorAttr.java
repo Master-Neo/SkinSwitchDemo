@@ -1,9 +1,14 @@
 package com.netease.skinswitchdemo.attr;
 
+import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
 
 public class TextColorAttr extends CustomizeAttr {
+
+	public TextColorAttr(Context context) {
+		super(context);
+	}
 
 	@Override
 	public void switchSkin(View view) {

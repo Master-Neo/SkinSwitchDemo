@@ -2,9 +2,6 @@ package com.netease.skinswitchdemo.attr;
 
 import android.view.View;
 
-import com.netease.skinswitchdemo.MyApp;
-import com.netease.skinswitchdemo.skin.SkinManager;
-
 import java.util.List;
 
 /**

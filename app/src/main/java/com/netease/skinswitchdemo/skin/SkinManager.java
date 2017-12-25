@@ -24,7 +24,7 @@ public class SkinManager {
         boolean isSkinResource = PreferenceUtil
                 .getBoolean(context, IConstants.KEY_SKIN_PREFERENCE, false);
         if (isSkinResource) {
-            resources = new CustomResources(context.getResources());
+            resources = new CustomResources(context, context.getResources());
         } else {
             resources = context.getResources();
         }
@@ -48,7 +48,7 @@ public class SkinManager {
      */
     public void switch2SkinResource(Context context) {
         PreferenceUtil.putBoolean(context, IConstants.KEY_SKIN_PREFERENCE, true);
-        resources = new CustomResources(context.getResources());
+        resources = new CustomResources(context, context.getResources());
         notifyObservers();
     }
 

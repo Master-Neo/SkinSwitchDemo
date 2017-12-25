@@ -26,16 +26,16 @@ public class CustomAttrCreator {
 
         switch (attrName) {
             case BACKGROUND:
-                attr = new BackgroundAttr();
+                attr = new BackgroundAttr(context);
                 break;
             case TEXT_COLOR:
-                attr = new TextColorAttr();
+                attr = new TextColorAttr(context);
                 break;
             case LIST_SELECTOR:
-                attr = new ListSelectorAttr();
+                attr = new ListSelectorAttr(context);
                 break;
             case DIVIDER:
-                attr = new DividerAttr();
+                attr = new DividerAttr(context);
                 break;
             default:
                 return null;

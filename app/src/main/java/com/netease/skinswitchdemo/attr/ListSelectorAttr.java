@@ -1,9 +1,14 @@
 package com.netease.skinswitchdemo.attr;
 
+import android.content.Context;
 import android.view.View;
 import android.widget.AbsListView;
 
 public class ListSelectorAttr extends CustomizeAttr {
+
+	public ListSelectorAttr(Context context) {
+		super(context);
+	}
 
 	@Override
 	public void switchSkin(View view) {

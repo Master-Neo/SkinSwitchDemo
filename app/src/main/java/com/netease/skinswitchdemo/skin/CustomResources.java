@@ -1,6 +1,7 @@
 package com.netease.skinswitchdemo.skin;
 
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
@@ -11,7 +12,6 @@ import android.os.Build;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
-import com.netease.skinswitchdemo.MyApp;
 import com.netease.skinswitchdemo.util.FileUtil;
 
 import java.io.File;
@@ -27,10 +27,12 @@ import java.lang.reflect.Method;
 public class CustomResources extends Resources {
 
     private Resources mSkinResources;
+    private Context mContext;
     private final String mDexPath = FileUtil.getSkinFilePath();
 
-    public CustomResources(Resources resources) {
+    public CustomResources(Context context, Resources resources) {
         super(resources.getAssets(), resources.getDisplayMetrics(), resources.getConfiguration());
+        mContext = context;
         try {
             if (TextUtils.isEmpty(mDexPath)) {
                 return;
@@ -59,14 +61,14 @@ public class CustomResources extends Resources {
             return 0;
         }
 
-        PackageManager pm = MyApp.getInstance().getPackageManager();
+        PackageManager pm = mContext.getPackageManager();
         /**
          * 当6.0以上手机未申请动态权限时，pkInfo返回为null
          */
         PackageInfo pkInfo = pm.getPackageArchiveInfo(mDexPath, PackageManager.GET_ACTIVITIES);
 
         String resourceName = getResourceName(resId);
-        String packageName = MyApp.getInstance().getPackageName();
+        String packageName = mContext.getPackageName();
         String skinResourceName = resourceName.replace(packageName, pkInfo.packageName);
         int skinResourceId = mSkinResources.getIdentifier(skinResourceName, null, null);
         return skinResourceId;

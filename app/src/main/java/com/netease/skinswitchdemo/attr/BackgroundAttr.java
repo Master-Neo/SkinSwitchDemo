@@ -1,12 +1,14 @@
 package com.netease.skinswitchdemo.attr;
 
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-import com.netease.skinswitchdemo.MyApp;
-import com.netease.skinswitchdemo.skin.SkinManager;
-
 public class BackgroundAttr extends CustomizeAttr {
+
+	public BackgroundAttr(Context context) {
+		super(context);
+	}
 
 	@Override
 	public void switchSkin(View view) {

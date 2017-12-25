@@ -1,10 +1,9 @@
 package com.netease.skinswitchdemo.attr;
 
+import android.content.Context;
 import android.content.res.Resources;
 import android.view.View;
 
-import com.netease.skinswitchdemo.MyApp;
-import com.netease.skinswitchdemo.skin.CustomResources;
 import com.netease.skinswitchdemo.skin.SkinManager;
 
 /**
@@ -15,6 +14,11 @@ public abstract class CustomizeAttr {
 	protected static final String RES_TYPE_NAME_COLOR = "color";
 	protected static final String RES_TYPE_NAME_DRAWABLE = "drawable";
 
+	public CustomizeAttr(Context context) {
+		this.context = context;
+	}
+
+	public Context context;
 	public Resources resources;
 	
 	/**
@@ -38,7 +42,7 @@ public abstract class CustomizeAttr {
 	public String attrValueTypeName;
 
 	public void apply(View view) {
-		resources = SkinManager.getInstance(MyApp.getInstance()).getResources();
+		resources = SkinManager.getInstance(context).getResources();
 		switchSkin(view);
 	}
 
