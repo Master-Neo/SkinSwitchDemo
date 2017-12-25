@@ -19,7 +19,8 @@ public class CustomAttrCreator {
     public static final String TEXT_COLOR = "textColor";
     public static final String LIST_SELECTOR = "listSelector";
     public static final String DIVIDER = "divider";
-    public static final List<String> SUPPORT_ATTRS = Arrays.asList(new String[]{BACKGROUND, TEXT_COLOR, LIST_SELECTOR, DIVIDER});
+    public static final String SRC = "src";
+    public static final List<String> SUPPORT_ATTRS = Arrays.asList(new String[]{BACKGROUND, TEXT_COLOR, LIST_SELECTOR, DIVIDER, SRC});
 
     public static CustomizeAttr create(Context context, String attrName, int attrValueRefId, String attrValueRefName, String typeName) {
         CustomizeAttr attr = null;
@@ -36,6 +37,9 @@ public class CustomAttrCreator {
                 break;
             case DIVIDER:
                 attr = new DividerAttr(context);
+                break;
+            case SRC:
+                attr = new SrcAttr(context);
                 break;
             default:
                 return null;
