@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    xmlns:skin="http://schemas.android.com/android/skin"
-    android:layout_height="match_parent"
-    skin:skin_switch="true"
-    android:background="@color/custom_green">
-
-</android.support.constraint.ConstraintLayout>

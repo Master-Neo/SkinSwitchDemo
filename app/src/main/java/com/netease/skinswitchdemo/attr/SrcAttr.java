@@ -20,7 +20,7 @@ public class SrcAttr extends CustomizeAttr {
     protected void switchSkin(View view) {
         if (view instanceof ImageView) {
             ImageView imageView = (ImageView) view;
-            imageView.setImageResource(attrValueRefId);
+            imageView.setImageDrawable(resources.getDrawable(attrValueRefId));
         }
     }
 }
